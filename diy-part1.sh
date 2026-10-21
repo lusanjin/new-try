@@ -1,2 +1,3 @@
 #!/bin/bash
-# 使用 Lean 源码自带插件，无需添加第三方 feed
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >> feeds.conf.default
+echo 'src-git adguardhome https://github.com/rufengsuixing/luci-app-adguardhome' >> feeds.conf.default
