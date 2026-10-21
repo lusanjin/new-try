@@ -1,8 +1,19 @@
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+#
+# File: .github/workflows/openwrt-builder.yml
+# Description: Build OpenWrt using GitHub Actions
+#
+
 name: OpenWrt Builder
 
 on:
   repository_dispatch:
   workflow_dispatch:
+
+# 赋予 Action 写入权限，用于创建 Release
+permissions:
+  contents: write
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -45,15 +56,15 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
+    - name: Clean old feeds
+      run: cd openwrt && ./scripts/feeds clean
+
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-
-        - name: Clean old feeds
-      run: cd openwrt && ./scripts/feeds clean
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
