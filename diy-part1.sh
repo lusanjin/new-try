@@ -16,3 +16,5 @@
 # Add a feed source
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+# 添加第三方 feed：包含 upnp 与 vlmcsd(kms)
+echo 'src-git custom https://github.com/jjm2473/openwrt-third.git' >> feeds.conf.default
