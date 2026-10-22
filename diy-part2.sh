@@ -1,2 +1,4 @@
 #!/bin/bash
-# 冲突插件已在 .config 中通过 is not set 禁用，无需额外操作。
+# 强制禁用冲突的 wpad 变体，防止依赖树自动拉取
+sed -i 's/CONFIG_PACKAGE_wpad-basic-mbedtls=y/# CONFIG_PACKAGE_wpad-basic-mbedtls is not set/g' .config
+sed -i 's/CONFIG_PACKAGE_wpad-basic=y/# CONFIG_PACKAGE_wpad-basic is not set/g' .config
