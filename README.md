@@ -1,5 +1,3 @@
-# 🚀 My-OpenWrt-Builder (或你的项目名)
-
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/你的用户名/你的仓库名/build-openwrt.yml?branch=main&label=Build&style=flat-square)](https://github.com/你的用户名/你的仓库名/actions)
 [![GitHub Stars](https://img.shields.io/github/stars/你的用户名/你的仓库名?style=flat-square)](https://github.com/你的用户名/你的仓库名/stargazers)
 [![License](https://img.shields.io/github/license/你的用户名/你的仓库名?style=flat-square)](./LICENSE)
